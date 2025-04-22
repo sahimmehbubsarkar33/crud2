@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\API\StudController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::post('create',[StudController::class , 'create']);
+Route::get('display',[StudController::class, 'display']);
+Route::post('update/{id}',[StudController::class , 'update']);
